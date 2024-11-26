@@ -26,64 +26,13 @@
     </nav>
     <main>
         <section>
-            <div class=" seccion_pagina_titulo">
-                <img src="../IMG/BANNER-VIK.png" alt="banner_grupal">
-                <img src="../IMG/Barras_arriba.png" alt="">
-                <h1>Comunidad</h1>
-            </div>
-        </section>
-        <section class="seccion_posts">
-            <div class="post">
-                <div class="post_info">
-                    <div class="post_titulo">
-                        <h3>Vik en el Fragata Fest</h3>
-                    </div>
-                    <div class="post_img">
-                        <img src="../IMG/Post_fragata.jpg" alt="">
-                    </div>
-                    <div>
-                        <h4>Publicado el 30/09/2024</h4>
-                    </div>
-                </div>
-
-                <div class="post_comentarios">
-                    <ul class="comentarios">
-                        <li><h3>Comentarios</h3></li>
-                        <li><b>Abril</b><br> ¡Increíble show, Vik! La energía que tienen en el escenario es brutal. Cada canción fue mejor que la anterior. ¡Gracias por esa noche en el Fragata! 🎸🔥</li>
-                        <li><b>Nicolás</b><br> ¡Qué buena onda, Vik! La vibra que transmiten en vivo es única. Espero que vuelvan pronto, esa energía no se consigue en cualquier lugar 🤘🎶</li>
-                        <li><b>Pedro</b><br> Primera vez que los veo y quedé impresionado. Gran elección de setlist, ¡las guitarras y la voz estuvieron increíbles! ¡Nos vemos en el próximo!</li>
-                    </ul>
-                    <div class="comentar">
-                        <!--<input type="text" name="comentario" id="comentario" placeholder="Agrega un comentario">-->
-                        <textarea id="comentario" placeholder="Escribí acá tu comentario..."></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <div class="post_info">
-                    <div class="post_titulo">
-                        <h3>Vik en Alegori</h3>
-                    </div>
-                    <div class="post_img">
-                        <img src="../IMG/Post-alegori.jpg" alt="">
-                    </div>
-                    <div>
-                        <h4>Publicado el 29/09/2024</h4>
-                    </div>
-                </div>
-
-                <div class="post_comentarios">
-                    <ul class="comentarios">
-                        <li><h3>Comentarios</h3></li>
-                        <li><b>Lola</b><br> ¡Qué show tan brutal! Vik lo dio todo en el escenario. Sin duda, una de las mejores noches de música en vivo que he tenido 🤘🔥</li>
-                        <li><b>Camila</b><br> Increíbles como siempre, Vik. La energía de cada canción fue impresionante. ¡Espero verlos pronto de nuevo! 🎶✨</li>
-                        <li><b>Milagros</b><br> ¡Espectacular concierto! Fue imposible no cantar y saltar con cada tema. ¡Gracias, Vik, por regalarnos esta experiencia! 😍🎸</li>
-                    </ul>
-                    <div class="comentar">
-                        <!--<input type="text" name="comentario" id="comentario" placeholder="Agrega un comentario">-->
-                        <textarea id="comentario" placeholder="Escribí acá tu comentario..."></textarea>
-                    </div>
-                </div>
+            <div class="contenedor-posts">
+                <!-- Aquí se insertará dinámicamente el HTML de los posts -->
+                <?php 
+                    include 'get_posts.php'; 
+                    // Llamamos a la función que genera el HTML de los posts
+                    echo generarPostHTML($posts); 
+                ?>
             </div>
         </section>
     </main>
