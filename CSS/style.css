@@ -17,9 +17,6 @@ a:visited {
     color: black;
 }
 
-ul {
-
-}
 
 nav {
     background-color: #ab1111;
@@ -423,7 +420,6 @@ text-align: center;
 .post{
     display: flex;
     justify-content: center;
-    width: 70%;
     background-color: black;
     border-radius: 1vw;
     margin: 2vw;
@@ -445,7 +441,6 @@ text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     font-size: medium;
     color: aliceblue;
     font-family: "Open Sans", sans-serif;
@@ -453,12 +448,14 @@ text-align: center;
     font-weight: 400;
     font-style: normal;
     width: 50%;
+    padding: 1vw;
 }
 .comentarios{
     display: block;
 }
 .comentarios li{
     padding: 0.5vw 0;
+    list-style-type: none;
 }
 .comentar{
     display: flex;
@@ -467,6 +464,10 @@ text-align: center;
     height: 4vw;
 
 
+}
+.titulo_comentarios{
+    display: flex;
+    justify-content: center;
 }
 #comentario{
     resize: none;

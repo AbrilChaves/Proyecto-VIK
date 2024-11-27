@@ -26,15 +26,22 @@
     </nav>
     <main>
         <section>
-            <div class="contenedor-posts">
-                <!-- Aquí se insertará dinámicamente el HTML de los posts -->
-                <?php 
-                    include 'get_posts.php'; 
-                    // Llamamos a la función que genera el HTML de los posts
-                    echo generarPostHTML($posts); 
-                ?>
+            <div class=" seccion_pagina_titulo">
+                <img src="../IMG/BANNER-VIK.png" alt="banner_grupal">
+                <img src="../IMG/Barras_arriba.png" alt="">
+                <h1>Comunidad</h1>
+            </div>
+        </section>
+        <section class="seccion_posts">
+            <div id="contenedor-boton">
+
+            </div>
+            <div id="contenedor-posts" class="contenedor-posts">
+
             </div>
         </section>
     </main>
+    <script src="../JAVASCRIPT/ver_posts.js"></script>
+    <script src="../JAVASCRIPT/comentar.js"></script>
 </body>
 </html>

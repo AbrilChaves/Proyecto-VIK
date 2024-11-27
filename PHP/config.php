@@ -2,8 +2,8 @@
 // Configuración de la base de datos
 $host = 'localhost'; // o el host de tu base de datos (por ejemplo, "127.0.0.1" o una dirección IP)
 $dbname = 'Vik_database'; // el nombre de tu base de datos
-$username = 'tu_usuario'; // el usuario de la base de datos
-$password = 'tu_contraseña'; // la contraseña de la base de datos
+$username = 'root'; // el usuario de la base de datos
+$password = ''; // la contraseña de la base de datos
 
 try {
     // Crear la conexión usando PDO

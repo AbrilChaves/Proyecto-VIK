@@ -37,19 +37,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<form action="registrar.php" method="POST">
-    <label>Nombre:</label>
-    <input type="text" name="nombre" required><br>
-
-    <label>Correo:</label>
-    <input type="email" name="correo" required><br>
-
-    <label>Contraseña:</label>
-    <input type="password" name="contraseña" required><br>
-
-    <label>Confirmar Contraseña:</label>
-    <input type="password" name="confirmar_contraseña" required><br>
-
-    <button type="submit">Registrarse</button>
-</form>

@@ -29,10 +29,10 @@
         <section id="login" class="login">
             <h1>Iniciar Sesión</h1>
             <div class="inicio_sesion_card">
-                <form action="">
+                <form action="../PHP/login.php" method="POST">
                     <div class="div_login">
-                        <label class="etiqueta_campo_login" for="usuario">Usuario</label>
-                        <input class="campo_login" type="text" id="usuario" name="correo" placeholder="Ingresar Usuario" required>
+                        <label class="etiqueta_campo_login" for="correo">Correo</label>
+                        <input class="campo_login" type="text" id="correo" name="correo" placeholder="Ingresar Correo" required>
                     </div>
                     <div class="div_login">
                         <label class="etiqueta_campo_login" for="contraseña">Contraseña</label>
@@ -45,7 +45,14 @@
                 <a href="./registrarse.html"><button>Registrarse</button></a>
             </div>
         </section>
+        <section id="sesionIniciada" class="login">
+            <h1>Sesión Iniciada</h1>
+            <div class="inicio_sesion_card">
+                <p>Nombre:</p>
+                <p>Rol:</p>
+            </div>
+        </section>
     </main>
-
+    <script src="../JAVASCRIPT/login.js"></script>
 </body>
 </html>
