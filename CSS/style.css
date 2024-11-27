@@ -389,6 +389,12 @@ text-align: center;
     align-items: center;
     flex-direction: column;
 }
+#login{
+    display: flex;
+}
+#sesionIniciada{
+    display: flex;
+}
 .inicio_sesion_card{
     background-color: black;
     border-radius: 1vw;
@@ -416,6 +422,28 @@ text-align: center;
 .centrar{
     display: flex;
     justify-content: center;
+}
+.publicar_post{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    border-radius: 20px;
+}
+.publicar_post *{
+    margin: 20px 0;
+    width: 80%;
+}
+.publicar_post input{
+    font-size: large;
 }
 .post{
     display: flex;
@@ -462,8 +490,6 @@ text-align: center;
     justify-content: center;
     width: 100%;
     height: 4vw;
-
-
 }
 .titulo_comentarios{
     display: flex;
@@ -505,6 +531,22 @@ h4{
 }
 .seccion_posts img{
     width: 100%;
+}
+#btn-crear-post{
+    font-size: xx-large;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    border: solid aliceblue;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+    padding: 10px 20px;
+}
+#btn-crear-post:hover{
+    background-color: gray;
 }
 #carrito{
     position: fixed;

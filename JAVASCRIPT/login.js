@@ -1,19 +1,29 @@
-// Al cargar la página, verifica si el usuario está logueado
 window.addEventListener('DOMContentLoaded', (event) => {
-    if (isLoggedIn) {
-        // Oculta el formulario de login
-        document.getElementById('login').style.display = 'none';
-        
-        // Muestra el mensaje de bienvenida
-        document.getElementById('sesionIniciada').style.display = 'block';
+    fetch('../PHP/verificar_login.php') // Llama al archivo PHP para verificar el estado de la sesión
+        .then(response => response.json())
+        .then(data => {
+            const login = document.getElementById('login');
+            const sesionIniciada = document.getElementById('sesionIniciada');
+            const nombre = document.getElementById('nombre');
+            const rol = document.getElementById('rol');
 
-        // Opcional: Si quieres mostrar el nombre y el rol, puedes obtenerlo desde PHP en una variable JavaScript
-        // Si se quiere hacer dinámico, puedes usar las variables de sesión en PHP y asignarlas al frontend.
-        document.getElementById('nombre').textContent = "<?php echo $_SESSION['nombre']; ?>";
-        document.getElementById('rol').textContent = "<?php echo $_SESSION['rol']; ?>";
-    } else {
-        // Si no está logueado, muestra el formulario
-        document.getElementById('login').style.display = 'block';
-        document.getElementById('sesionIniciada').style.display = 'none';
-    }
+            if (data.is_logged_in) {
+                // Oculta el formulario de login
+                login.style.display = 'none';
+                
+                // Muestra el mensaje de bienvenida
+                sesionIniciada.style.display = 'flex';
+
+                // Muestra el nombre y rol del usuario
+                nombre.textContent = data.usuario_nombre;
+                rol.textContent = data.usuario_rol;
+            } else {
+                // Si no está logueado, muestra el formulario
+                login.style.display = 'flex';
+                sesionIniciada.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error al verificar la sesión:', error);
+        });
 });

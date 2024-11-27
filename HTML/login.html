@@ -48,9 +48,12 @@
         <section id="sesionIniciada" class="login">
             <h1>Sesión Iniciada</h1>
             <div class="inicio_sesion_card">
-                <p>Nombre:</p>
-                <p>Rol:</p>
+                <p>Nombre: <span id="nombre"></span></p>
+                <p>Rol: <span id="rol"></span></p>
             </div>
+            <form action="../PHP/logout.php" method="POST">
+                <input type="submit" value="Cerrar sesión">
+            </form>
         </section>
     </main>
     <script src="../JAVASCRIPT/login.js"></script>

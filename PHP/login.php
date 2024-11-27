@@ -25,14 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['correo'] = $usuario['correo']; // Guardar el correo en la sesión
             $_SESSION['rol'] = $usuario['rol']; // Guardar el rol del usuario en la sesión
 
-            // Redirigir a la página de comunidad
             header("Location: ../HTML/login.html");
             exit;
         } else {
-            echo "Usuario o contraseña incorrectos.";
+        echo "<script>alert('Usuario o contraseña incorrectos.'); window.location.href = '../HTML/registrarse.html';</script>";
         }
     } catch (PDOException $e) {
-        echo "Error de conexión: " . $e->getMessage();
+        echo "<script>alert('Usuario o contraseña incorrectos. ". $e->getMessage()."'); window.location.href = '../HTML/registrarse.html';</script>";
     }
 }
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIK - Community</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="microfono.jpg" href="../IMG/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Kanit:wght@900&family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li class="imagen_nav"><a href="../index.html"><img  src="../IMG/logo.png" alt=""></a></li>
+            <li><a href="../index.html#discografia">Discografia</a></li>
+            <li><a href="./fechas.html">Fechas</a></li>
+            <li><a href="../index.html#miembros">Miembros</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
+            <li><a href="./comunidad.html">Comunidad</a></li>
+            <li><a href="../index.html#newsletter">Newsletter</a></li>
+            <li><a href="./tienda.html">Tienda</a></li>
+            <li class="imagen_nav"><a href="./login.html"><img  src="../IMG/icono_login.png" alt="Login"></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <div class=" seccion_pagina_titulo">
+                <img src="../IMG/BANNER-VIK.png" alt="banner_grupal">
+                <img src="../IMG/Barras_arriba.png" alt="">
+                <h1>Comunidad</h1>
+            </div>
+        </section>
+        <section class="seccion_posts">
+            <form class="publicar_post" action="../PHP/crear_post.php" method="POST" enctype="multipart/form-data">
+                <label for="titulo">Título del post</label>
+                <input type="text" id="titulo" name="titulo" required>
+            
+                <label for="nombre_imagen">Nombre de la imagen</label>
+                <input type="text" id="nombre_imagen" name="nombre_imagen" required>
+            
+                <label for="imagen">Imagen del post</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            
+                <input type="submit" value="Crear Post">
+            </form>
+            
+        </section>
+    </main>
+    <script src="../JAVASCRIPT/admin.js"></script>
+</body>
+</html>
+

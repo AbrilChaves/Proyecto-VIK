@@ -9,15 +9,6 @@ $password = ""; // tu contraseña de base de datos
 
 session_start(); // Asegúrate de iniciar la sesión al inicio del archivo
 
-// Mostrar botón si el usuario es administrador
-function mostrarBotonCrearPost() {
-    if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
-        return '<button id="btn-crear-post">Crear Post</button>';
-    }
-    return '';
-}
-
-
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -44,7 +35,7 @@ function obtenerPosts() {
 function obtenerComentarios($post_id) {
     global $pdo;
     $query = "
-        SELECT c.id_comentario, c.contenido, u.nombre AS autor
+        SELECT c.id_comentario, c.contenido, c.fecha_comentario, u.nombre AS autor
         FROM Comentarios c
         JOIN Usuarios u ON c.id_usuario = u.id_usuario
         WHERE c.id_post = :post_id
@@ -61,9 +52,8 @@ $posts = obtenerPosts();
 // Función para generar el HTML de los posts
 function generarPostHTML($posts) {
     $html = '';
-    if (isset($_SESSION['mensaje'])) {
-        echo '<p class="mensaje">' . htmlspecialchars($_SESSION['mensaje']) . '</p>';
-        unset($_SESSION['mensaje']); // Eliminar el mensaje después de mostrarlo
+    if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
+        $html .= '<div class="centrar"><a href="./crear_post.html"><button id="btn-crear-post">Crear Post</button></a></div>';
     }
 
     foreach ($posts as $post) {
@@ -75,8 +65,14 @@ function generarPostHTML($posts) {
         $html .= '<div class="post_titulo"><h3>' . htmlspecialchars($post['titulo']) . '</h3></div>';
         $html .= '<div class="post_img"><img src="'.htmlspecialchars($post['contenido']).'" alt="Imagen del post"></div>';
         $html .= '<div><h4>Publicado el ' . date('d/m/Y', strtotime($post['fecha_publicacion'])) . '</h4></div>';
-        $html .= '</div>';
 
+        if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
+        $html .= '<form action="../PHP/eliminar_post.php" method="POST" onsubmit="return confirm(\"¿Estás seguro de que quieres eliminar este post?\")">';
+        $html .= '<input type="hidden" name="id_post" value="' . $post['id_post'] . '">';
+        $html .= '<input type="submit" value="Eliminar Post"></form>';
+        }
+
+        $html .= '</div>';
         $html .= '<div class="post_comentarios">';
         $html .= '<div class="titulo_comentarios"><h3>Comentarios</h3></div>';
         $html .= '<ul class="comentarios">';
@@ -84,7 +80,7 @@ function generarPostHTML($posts) {
 
         if (count($comentarios) > 0) {
             foreach ($comentarios as $comentario) {
-                $html .= '<li><b>' . htmlspecialchars($comentario['autor']) . '</b><br>';
+                $html .= '<li><b>' . htmlspecialchars($comentario['autor']) . '</b> '.htmlspecialchars($comentario['fecha_comentario']).'<br>';
                 $html .= nl2br(htmlspecialchars($comentario['contenido'])) . '</li>';
             }
         } else {
@@ -105,6 +101,5 @@ function generarPostHTML($posts) {
 }
 
 // Mostrar los posts como HTML
-echo mostrarBotonCrearPost();
 echo generarPostHTML($posts);
 ?>

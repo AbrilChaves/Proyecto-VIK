@@ -8,6 +8,7 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(50) NOT NULL,
     correo VARCHAR(100) UNIQUE NOT NULL,
     contraseña VARCHAR(255) NOT NULL,
+    rol ENUM('normal', 'admin') NOT NULL DEFAULT 'normal';
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

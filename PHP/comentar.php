@@ -3,7 +3,7 @@ session_start();
 // Verifica si el usuario está logueado
 if (!isset($_SESSION['usuario_id'])) {
     // Alerta para usuarios no logueados
-    echo "Debes iniciar sesión para comentar";
+    echo "<script>alert('Debes iniciar sesión para comentar'); window.location.href = '../HTML/comunidad.html';</script>";
     exit;
 }
 

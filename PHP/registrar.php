@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificar que las contraseñas coincidan
     if ($contraseña !== $confirmar_contraseña) {
-        echo "Las contraseñas no coinciden.";
+        echo "<script>alert('Las contraseñas no coinciden.'); window.location.href = '../HTML/registrarse.html';</script>";
     } else {
         // Verificar si el correo ya está registrado
         $stmt = $pdo->prepare("SELECT * FROM Usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         
         if ($stmt->rowCount() > 0) {
-            echo "El correo ya está registrado.";
+            echo "<script>alert('El correo ya está registrado.'); window.location.href = '../HTML/registrarse.html';</script>";
         } else {
             // Hashear la contraseña
             $contraseña_hashed = password_hash($contraseña, PASSWORD_DEFAULT);
@@ -26,14 +26,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Insertar el nuevo usuario en la base de datos
             $stmt = $pdo->prepare("INSERT INTO Usuarios (nombre, correo, contraseña) VALUES (?, ?, ?)");
             if ($stmt->execute([$nombre, $correo, $contraseña_hashed])) {
-                echo "Registro exitoso. Ahora puedes iniciar sesión.";
-                // Puedes redirigir al usuario a la página de inicio de sesión
-                // header("Location: login.php");
-                // exit;
+                echo "<script>alert('Registro exitoso. Ahora puedes iniciar sesión.'); window.location.href = '../HTML/login.html';</script>";
+
             } else {
-                echo "Hubo un error al registrar el usuario.";
+                echo "<script>alert('Hubo un error al registrar el usuario.'); window.location.href = '../HTML/registrarse.html';</script>";
             }
         }
     }
+    /*
+    $sql = "SELECT correo FROM usuarios";
+    $result = $conn->query($sql);
+
+        // Verificar si hay correos en la base de datos
+    if ($result->num_rows > 0) {
+    // Datos del formulario
+    $nombre = $_POST['nombre'];
+    $asunto = $_POST['Registro en VIK'];
+    $mensaje = $_POST['mensaje'];
+
+    // Preparar el mensaje completo
+    $mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre;
+
+    // Enviar el correo a cada destinatario
+    while ($row = $result->fetch_assoc()) {
+        $destinatario = $row['email'];
+        $header = "From: VIK";
+        if (mail($destinatario, $asunto, $mensajeCompleto, $header)) {
+            echo "Correo enviado a: $destinatario<br>";
+        } else {
+            echo "Error al enviar el correo a: $destinatario<br>";
+        }
+    }
+    } else {
+        echo "No hay correos en la base de datos.";
+    }
+
+    $conn->close();
+
+    echo "<script> alert('Proceso de envío completado') </script>";
+    echo "<script> setTimeout(() => { location.href='index.html'; }, 1000); </script>";
+*/
 }
 ?>
