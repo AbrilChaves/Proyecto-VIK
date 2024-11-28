@@ -1,8 +1,3 @@
-main {
-    background-image: url(../IMG/Fondo.png);
-    background-size: 80%;
-
-}
 * {
     text-decoration: none;
     margin: 0;
@@ -14,24 +9,18 @@ a {
     font-weight: 800;
     font-style: normal;
     color: black;
+    display: flex;
+    align-items: center;
 }
 
 a:visited {
     color: black;
 }
 
-ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 40px;
-    font-size: 200%;
-}
 
 nav {
     background-color: #ab1111;
-    padding: 18px;
+    padding: 1vw;
 }
 
 h1{
@@ -41,7 +30,7 @@ h1{
     font-family: "Kanit", sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 80px;
+    font-size: 6vw;
 }
 p{
     text-align: center;
@@ -50,33 +39,34 @@ p{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: xx-large;
+    font-size: 2vw;
 }
 h2{
     text-align: center;
+    text-transform: none;
     color: aliceblue;
     font-family: "Courier Prime", monospace;
     font-weight: 700;
     font-style: normal;
-    font-size: xx-large;
+    font-size: 2vw;
     background-image: url(../IMG/fondo_texto.png);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px 0px;
+    padding: 2vw 0;
+    width: 100%;
 }
 
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10em;
-    margin-bottom: 5%;
+
 
 }
 .logo img{
     width: 50%;
-
+    position: absolute;
 
 }
 .banner{
@@ -87,10 +77,13 @@ h2{
 .banner img{
     width: 100%;
 }
+
 .seccion{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10vw 0px
+
 }
 .seccion img{
     width: 100%;
@@ -107,47 +100,77 @@ h2{
     background-size: 95%;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px
+    padding: 1.5vw
 }
 .redes img{
-    width: 20%;
-    padding: 0px 20px;
+    width: 100%;
+    padding: 0px 1.5vw;
 }
 .newsletter{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     background-color: black;
-    border-radius: 20px;
-    border: 5px white;
-    margin: 0px 5%;
+    padding: 0 5vw;
 }
 .imagen_nav{
-    width: 40px;
-}
-.merch_titulo{
-    position: absolute;
-    top: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.imagen_nav img{
+    width: 2.5vw;
+    vertical-align: middle;
+    padding: 0px 1vw;
+}
+.seccion_pagina_titulo{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}.seccion_pagina_titulo img{
+    width: 100%;
+}
+.seccion_pagina_titulo h1{
+    position: absolute;
+    padding: 6vw;
+    width: fit-content;
+    background-image: url(../IMG/fondo_texto.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 .navigation{
     position: sticky;
+    z-index: 10;
     top: 0px;
+    font-size: 1.7vw;
+}
+.navigation ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
 }
 .seccion_tienda{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0px;
+    padding: 2vw 0;
     width: 100%;
 }
 .item{
-width: 20%;
+width: 300px;
+display: flex;
+flex-direction: column;
+text-align: center;
 }
 .item img{
     background-color: black;
-    padding: 30px 0px;
+    padding: 3vw 0;
     width: 100%;
 }
 
@@ -157,4 +180,484 @@ width: 20%;
 }
 .footer img{
     width: 5%;
+}
+.barras{
+    width: 100%;
+    position: absolute;
+}
+.barras img{
+    width: 100%;
+}
+#banner{
+    background-image:
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_rojo.png);
+    background-position: 
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#discografia {
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_verde.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#fechas{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_violeta.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#galeria{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_gris.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#comunidad{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_amarillo.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#miembros{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_blanco.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    padding: 15vw;
+}
+#vito{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_amarillo.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#lauti{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_cian.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#alexis{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_violeta.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#marco{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_rojo.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+#pipo{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_verde.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+}
+.tienda{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_cian.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    padding: 10vw 0px;
+}
+.login{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_blanco.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    padding: 10vw 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#login{
+    display: flex;
+}
+#sesionIniciada{
+    display: flex;
+}
+.inicio_sesion_card{
+    background-color: black;
+    border-radius: 1vw;
+    padding: 2vw;
+    width: 40%;
+}
+.etiqueta_campo_login{
+    color: aliceblue;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+.campo_login{
+    color: black;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.div_login{
+    padding: 1vw;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+.publicar_post{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    border-radius: 20px;
+}
+.publicar_post *{
+    margin: 20px 0;
+    width: 80%;
+}
+.publicar_post input{
+    font-size: large;
+}
+.post{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 1vw;
+    margin: 2vw;
+}
+.post_titulo{
+    color: aliceblue;
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    padding: 1vw 0.5vw;
+    width: 100%;
+}
+.post_info{
+    width: 50%;
+}
+.post_comentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: medium;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    width: 50%;
+    padding: 1vw;
+}
+.comentarios{
+    display: block;
+}
+.comentarios li{
+    padding: 0.5vw 0;
+    list-style-type: none;
+}
+.comentar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 4vw;
+}
+.titulo_comentarios{
+    display: flex;
+    justify-content: center;
+}
+#comentario{
+    resize: none;
+
+    width: 80%;
+    height: auto;
+}
+h4{
+    padding: 1vw;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.seccion_posts{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_amarillo.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10vw 0px;
+}
+.seccion_posts img{
+    width: 100%;
+}
+#btn-crear-post{
+    font-size: xx-large;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    border: solid aliceblue;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+    padding: 10px 20px;
+}
+#btn-crear-post:hover{
+    background-color: gray;
+}
+
+.agregarEvento{
+    color: aliceblue;
+}
+#carrito{
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    width: 30%;
+    padding: 1vw;
+    background-color: black;
+    border-radius: 1vw ;
+    border: 1px solid aliceblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 2vw;
+
+}
+.carrito-escondido{
+    transform: translateX(150%);
+}
+.carrito-visible{
+    transform: translateX(0);
+}
+#carrito-icono {
+    background: none;     /* Sin fondo */
+    border: none;         /* Sin borde */
+    padding: 0;           /* Sin padding */
+    margin: 0;            /* Sin margen */
+    outline: none;        /* Sin contorno al hacer clic */
+    font-size: 1.5rem;    /* Ajusta el tamaño del ícono */
+    cursor: pointer;      /* Cambia el cursor para indicar que es clickeable */
+    color: inherit;       /* Toma el color de su elemento padre */
+    appearance: none;     /* Elimina cualquier estilo específico del navegador */
+  }
+  span{
+    color: aliceblue;
+  }
+  .fechas{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_violeta.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    padding: 10vw 0px;
+    display: flex;
+    justify-content: center;
+
+}
+.fechas table{
+    width: 70%;
+    padding: 1vw;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: x-large;
+    background-color: black;
+    border-collapse: collapse;
+    border: 1px solid aliceblue;
+}
+
+.fechas th{
+    padding: .5vw;
+    background-color: black;
+    border: 1px solid aliceblue;
+}
+.fechas td{
+    padding: .5vw;
+    background-color: black;
+    border: 1px solid aliceblue;
+}
+.galeria{
+    background-image:
+        url(../IMG/Barras_abajo.png),
+        url(../IMG/Barras_arriba.png),
+        url(../IMG/fondo_vik_gris.png);
+    background-position: 
+        top center,
+        bottom center,
+        center; 
+    background-size: 
+        100%,
+        100%,
+        cover;
+    background-repeat: no-repeat;
+    padding: 10vw 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.agregarAlCarrito{
+    background: black;     /* Sin fondo */
+    border-radius: 20px;         /* Sin borde */
+    padding: 10px;           /* Sin padding */
+    margin: 10px;            /* Sin margen */
+    outline: none;        /* Sin contorno al hacer clic */
+    font-size: medium;    /* Ajusta el tamaño del ícono */
+    cursor: pointer;      /* Cambia el cursor para indicar que es clickeable */
+    color: aliceblue;       /* Toma el color de su elemento padre */
+    appearance: none;   
 }

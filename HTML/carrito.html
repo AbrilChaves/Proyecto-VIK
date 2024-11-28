@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIK</title>
+    <title>VIK - Shopping Cart</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="icon" type="microfono.jpg" href="IMG/logo.png">
+    <link rel="icon" type="microfono.jpg" href="../IMG/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Kanit:wght@900&family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
@@ -13,19 +13,29 @@
 <body>
     <nav class="navigation">
         <ul>
-            <li><a href="../VIK.html">VIK</a></li>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#discos">Discos</a></li>
-            <li><a href="#prendas">Prendas</a></li>
-            <li><a href="#accesorios">Accesorios</a></li>
-            <li><a href="#stickers">Stickers</a></li>
-            <li><a href="./carrito.html"><img class="carrito" src="../IMG/carrito.png" alt="carrito"></a></li>
+            <li class="imagen_nav"><a href="../index.html"><img  src="../IMG/logo.png" alt=""></a></li>
+            <li><a href="./tienda.html">Tienda</a></li>
+            <li><a href="./tienda.html#discos">Discos</a></li>
+            <li><a href="./tienda.html#prendas">Prendas</a></li>
+            <li><a href="./tienda.html#accesorios">Accesorios</a></li>
+            <li><a href="./tienda.html#stickers">Stickers</a></li>
+            <li class="imagen_nav">
+                <a href="./carrito.html"><img src="../IMG/carrito.png" alt="carrito"></a>
+                <a href="./login.html"><img src="../IMG/icono_login.png" alt="Login"></a>
+            </li>
         </ul>
     </nav>   
-    <main>
-        <section>
+    <main style="background-color: black;">
+        <h1>Carrito de Compras</h1>
+    <div id="carrito" class="carrito-escondido">
+        <ul id="carrito-lista"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+    <a href="tienda.html">Volver a la Tienda</a>
 
-        </section>
+    <script src="carrito.js"></script>
     </main>
 </body>
 </html>
