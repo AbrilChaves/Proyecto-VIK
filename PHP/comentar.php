@@ -26,16 +26,14 @@ if (isset($_POST['comentario']) && isset($_POST['post_id'])) {
     $comentario = $_POST['comentario'];
     $id_post = $_POST['post_id'];
     $id_usuario = $_SESSION['usuario_id'];
-    $fecha_comentario = date('Y-m-d H:i:s');
 
     try {
-        $query = "INSERT INTO Comentarios (id_post, id_usuario, contenido, fecha_comentario) 
-                  VALUES (:id_post, :id_usuario, :contenido, :fecha_comentario)";
+        $query = "INSERT INTO Comentarios (id_post, id_usuario, contenido) 
+                  VALUES (:id_post, :id_usuario, :contenido)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':id_post', $id_post);
         $stmt->bindParam(':id_usuario', $id_usuario);
         $stmt->bindParam(':contenido', $comentario);
-        $stmt->bindParam(':fecha_comentario', $fecha_comentario);
         $stmt->execute();
 
         // Alerta de éxito
