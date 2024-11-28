@@ -36,11 +36,9 @@ CREATE TABLE Comentarios (
 
 CREATE TABLE Eventos (
     id_evento INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(255) NOT NULL,
     lugar VARCHAR(255) NOT NULL,
     fecha DATE NOT NULL,
-    hora TIME NOT NULL,
-    descripcion TEXT
+    hora TIME NOT NULL
 );
 
 

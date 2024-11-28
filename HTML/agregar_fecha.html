@@ -23,7 +23,7 @@
             <li><a href="./tienda.html">Tienda</a></li>
             <li class="imagen_nav"><a href="./login.html"><img  src="../IMG/icono_login.png" alt="Login"></a></li>
         </ul>
-    </nav> 
+    </nav>
     <main>
         <section>
             <div class=" seccion_pagina_titulo">
@@ -32,21 +32,23 @@
                 <h1>Fechas</h1>
             </div>
         </section>
-        <section class="fechas">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Lugar</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <section class="seccion_posts">
+            <h1>Agregar Nueva Fecha</h1>
+            <form class="publicar_post" action="../PHP/agregar_fecha.php" method="POST">
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar" required>
+        
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+        
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
 
-                </tbody>
-            </table>
+                <button type="submit">Agregar Fecha</button>
+            </form>
         </section>
     </main>
-    <script src="../JAVASCRIPT/ver_fechas.js"></script>
+    <script src="../JAVASCRIPT/admin.js"></script>
 </body>
 </html>
+
