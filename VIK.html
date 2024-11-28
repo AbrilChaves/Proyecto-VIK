@@ -95,11 +95,18 @@
         </section>
 
         <section id="newsletter">
-            <div class="newsletter">
-                <h1>Newsletter</h1>
-                <input type="text" id="mail" name="mail" placeholder="Escribe tu email">
-            </div>
+            <form action="index.php" method="post">
+                <div class="newsletter">
+                    <h1>Newsletter</h1>
+                    <input type="email" id="mail" name="mail" placeholder="Escribe tu email" required>
+                    <button type="submit">Suscribirse</button>
+                </div>
+            </form>
         </section>
+
+
+
+    
 
         <div id="miembros">
             <h1>Miembros</h1>
